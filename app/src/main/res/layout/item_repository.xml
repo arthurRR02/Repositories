@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    app:cardBackgroundColor="@color/black_card"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/layout_half_padding"
+    app:cardElevation="@dimen/layout_half_padding"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_owner"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_repository_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/layout_half_padding"
+            android:textColor="@color/light_blue"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_owner"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@sample/repositories.json/name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_repository_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/layout_half_padding"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/light_blue"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/txt_repository_name"
+            app:layout_constraintTop_toBottomOf="@id/txt_repository_name"
+            tools:text="@sample/repositories.json/description" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            app:chipBackgroundColor="@color/black_card"
+            android:textColor="@color/light_blue"
+            tools:text="@sample/repositories.json/stargazers_count"
+            app:layout_constraintStart_toStartOf="@id/txt_repository_name"
+            app:layout_constraintTop_toBottomOf="@id/txt_repository_description"
+            app:chipIcon="@drawable/ic_star"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/fork"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            app:chipBackgroundColor="@color/black_card"
+            tools:text="@sample/repositories.json/forks_count"
+            android:textColor="@color/light_blue"
+            app:layout_constraintStart_toEndOf="@id/favorite"
+            app:layout_constraintTop_toBottomOf="@id/txt_repository_description"
+            app:chipIcon="@drawable/ic_fork"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_repository_language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/layout_half_padding"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/light_blue"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/fork"
+            tools:text="@sample/repositories.json/language" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
